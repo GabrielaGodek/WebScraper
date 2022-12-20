@@ -13,6 +13,7 @@ with open('./data/currency.jl', 'rb') as data_file:
         elif item['title'] == 'USD/PLN':
             usd_pln.append(item)
             
+
 def makeChart(tmp):
     tmp_value, tmp_timeline = [], []
     for i in tmp:
