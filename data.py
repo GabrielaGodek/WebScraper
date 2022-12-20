@@ -1,11 +1,10 @@
 import json_lines
 import matplotlib.pyplot as plt
 
-eur_pln = []
-usd_pln = []
-eur_usd = []
+eur_pln, usd_pln, eur_usd  = [], [], []
 
-with open('env/webspider/currency.jl', 'rb') as data_file:
+# Get the data from API
+with open('./data/currency.jl', 'rb') as data_file:
     for item in json_lines.reader(data_file):
         if item['title'] == 'EUR/PLN':
             eur_pln.append(item)
@@ -14,27 +13,25 @@ with open('env/webspider/currency.jl', 'rb') as data_file:
         elif item['title'] == 'USD/PLN':
             usd_pln.append(item)
             
-# print(eur_usd)
-# print(usd_pln)
 
-# Data for plotting for EUR/PLN
-# print(eur_pln)
-eur_pln_value = []
-eur_pln_timeline = []
-for i in eur_pln:
-    curr_value = float(i['value'].strip().replace(",", "."))
-    eur_pln_value.append(curr_value)
-    eur_pln_timeline.append(i['data'])
+def makeChart(tmp):
+    tmp_value, tmp_timeline = [], []
+    for i in tmp:
+        curr_value = float(i['value'].strip().replace(",", "."))
+        tmp_value.append(curr_value)
+        tmp_timeline.append(i['data'])
+    return tmp_value, tmp_timeline
     
-# print(eur_pln_value)
-# print(eur_pln_timeline)
-        
     
-plt.plot(eur_pln_timeline, eur_pln_value)
-plt.xlabel('data')
-plt.ylabel('value')
-plt.title('EUR/PLN')
-plt.grid()
-plt.savefig("eur_pln.png")
+# Plot the charts
+plt.subplot(2, 2, 1)
+plt.plot(makeChart(eur_pln)[1], makeChart(eur_pln)[0], color='r', label='eur_pln')
+
+plt.subplot(2, 2, 2)
+plt.plot(makeChart(usd_pln)[1], makeChart(usd_pln)[0], color='g', label='usd_pln')
+
+plt.subplot(2, 2, 3)
+plt.plot(makeChart(eur_usd)[1], makeChart(eur_usd)[0], color='b', label='eur_usd')
+
+plt.legend()
 plt.show()
-        
