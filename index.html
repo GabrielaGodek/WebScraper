@@ -5,14 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency relations</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <header class="info">
+        <h1>Hurtownia danych </h1>
+    </header>
     <main class="statistic-page">
-        <div class="row">
-            <div class="column"><img src="./eur_pln.png" alt="EUR - PLN relation"></div>
-            <div class="column"><img src="./usd_pln.png" alt="USD - PLN relation"></div>
-            <div class="column"><img src="./eur_usd.png" alt="EUR - USD relation"></div>
+        <div class="title-checkbox">
+            Choose interesting you chart 
         </div>
+            <form>
+                <div class="row title-radio">
+                    <input type="radio" name="eur_pln" id="">
+                    <label for="eur_pln" class="title">EUR - PLN</label>
+                    <input type="radio" name="eur_pln" id="">
+                    <label for="eur_pln" class="title">USD - PLN</label>
+                    <input type="radio" name="eur_pln" id="">
+                    <label for="eur_pln" class="title">EUR - USD</label>
+                </div>
+            </form>
+            <div class="row charts">
+                <div class="chart-wrapper">
+                    <img src="./eur_pln.png" alt="EUR - PLN relation">
+                </div>
+                <div class="chart-wrapper">
+                    <img src="./usd_pln.png" alt="USD - PLN relation">
+                </div>
+                <div class="chart-wrapper">
+                    <img src="./eur_usd.png" alt="EUR - USD relation">
+                </div>
+            </div>
     </main>
+    <footer class="info"></footer>
+    <script src="./js/script.js"></script>
 </body>
 </html>

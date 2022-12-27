@@ -12,7 +12,7 @@ with open('./data/currency.jl', 'rb') as data_file:
             eur_usd.append(item)
         elif item['title'] == 'USD/PLN':
             usd_pln.append(item)
-            
+              
 def makeChart(tmp):
     tmp_value, tmp_timeline = [], []
     for i in tmp:
@@ -25,12 +25,15 @@ def makeChart(tmp):
 # Plot the charts
 plt.subplot(2, 2, 1)
 plt.plot(makeChart(eur_pln)[1], makeChart(eur_pln)[0], color='r', label='eur_pln')
+# plt.savefig('eur_pln.png')
 
 plt.subplot(2, 2, 2)
 plt.plot(makeChart(usd_pln)[1], makeChart(usd_pln)[0], color='g', label='usd_pln')
+# plt.savefig('usd_pln.png')
 
 plt.subplot(2, 2, 3)
 plt.plot(makeChart(eur_usd)[1], makeChart(eur_usd)[0], color='b', label='eur_usd')
+# plt.savefig('eur_usd.png')
 
 plt.legend()
 plt.show()
