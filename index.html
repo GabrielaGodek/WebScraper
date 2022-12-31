@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,52 @@
     <title>Currency relations</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
     <header class="info">
         <h1>Hurtownia danych </h1>
     </header>
     <main class="statistic-page">
-        <div class="title-checkbox">
-            Choose interesting you chart 
-        </div>
-            <form>
-                <div class="row title-radio">
-                    <input type="radio" name="eur_pln" id="">
-                    <label for="eur_pln" class="title">EUR - PLN</label>
-                    <input type="radio" name="eur_pln" id="">
-                    <label for="eur_pln" class="title">USD - PLN</label>
-                    <input type="radio" name="eur_pln" id="">
-                    <label for="eur_pln" class="title">EUR - USD</label>
-                </div>
-            </form>
-            <div class="row charts">
-                <div class="chart-wrapper">
-                    <img src="./eur_pln.png" alt="EUR - PLN relation">
-                </div>
-                <div class="chart-wrapper">
-                    <img src="./usd_pln.png" alt="USD - PLN relation">
-                </div>
-                <div class="chart-wrapper">
-                    <img src="./eur_usd.png" alt="EUR - USD relation">
-                </div>
-            </div>
+        <article class="statistic-page">
+            <section class="row title-checkbox">
+                <h2>Choose interesting you chart 
+                    <!-- <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><title>Willa Cather</title><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#0c8f8f"></rect><rect x="0" y="0" width="36" height="36" transform="translate(4 4) rotate(280 18 18) scale(1.1)" fill="#ffad08" rx="36"></rect><g transform="translate(0 -2) rotate(0 18 18)"><path d="M15 20c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="14" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="20" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg> -->
+                </h2>
+            </section>
+            
+            <section class="row title-radio">
+                <form>
+                    <div class="chart-group">
+                        <input type="radio" name="radio" id="eur_pln">
+                        <label for="eur_pln" class="title-label">EUR - PLN</label>
+                    </div>
+                    <div class="chart-group">
+                        <input type="radio" name="radio" id="usd_pln">
+                        <label for="usd_pln" class="title-label">USD - PLN</label>
+                    </div>
+                    <div class="chart-group">
+                        <input type="radio" name="radio" id="eur_usd">
+                        <label for="eur_usd" class="title-label">EUR - USD</label>
+                    </div>
+                </form>
+            </section>
+            <section class="row charts">
+                    <div class="chart-wrapper eur_pln">
+                            <img src="./eur_pln.png" alt="EUR - PLN relation">
+                    </div>
+                    <div class="chart-wrapper usd_pln">
+                        <img src="./usd_pln.png" alt="USD - PLN relation">
+                    </div>
+                    <div class="chart-wrapper eur_usd">
+                        <img src="./eur_usd.png" alt="EUR - USD relation">
+                    </div>
+                </section>
+        </article>
     </main>
-    <footer class="info"></footer>
+    <footer class="credits">
+        Gabriela Godek, ZIISS1-1113
+    </footer>
     <script src="./js/script.js"></script>
 </body>
+
 </html>

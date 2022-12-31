@@ -1,0 +1,84 @@
+/* variables */
+$main-bg-color: #7B8485;
+$second-bg-color: #90987D;
+$headline: #EFF2E8;
+$paragraph: #F4F0F1;
+$element: #25242A;
+$detail: #AC8682;
+
+@font-face {
+  font-family: 'Quilon Regular';
+  src: url('./Quilon-Regular.woff') format('woff');
+}
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quilon Regular', Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: $main-bg-color;
+  
+  .info {
+    width: 100%;
+    padding: 20px 40px;
+    h1 {
+            text-align: center;
+            font-size: 22px;
+            line-height: 22px;
+            color: $headline;
+        }
+    }
+    .statistic-page {
+        padding: 20px 40px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $main-bg-color;
+        .row{
+          &.title-checkbox {
+            opacity: .3;
+            padding: 30px 0;
+            h2 {
+              font-size: 20px;
+              color: $headline;
+            }
+          }
+          &.title-radio {
+            form {
+              display: flex;
+              flex-direction: column;
+              // import radio-animation
+              }
+            }
+          &.charts {
+            height: 100%;
+            // max-height: 0;
+            .chart-wrapper {
+              max-height: 0;
+              // height: 100%;
+              overflow: hidden;
+              transition: all 0.5s ease-in-out;
+              text-align: center;
+              img {
+                height: 100%;
+              }
+            }
+          }
+        }
+    }
+    .credits{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 40px;
+      text-align: right;
+      color: $paragraph;
+      background-color: $main-bg-color;
+    }
+}
