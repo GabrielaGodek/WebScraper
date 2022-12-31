@@ -1,5 +1,6 @@
 import json_lines
 import matplotlib.pyplot as plt
+import numpy as np
 
 eur_pln, usd_pln, eur_usd  = [], [], []
 
@@ -12,8 +13,7 @@ with open('./data/currency.jl', 'rb') as data_file:
             eur_usd.append(item)
         elif item['title'] == 'USD/PLN':
             usd_pln.append(item)
-            
-
+              
 def makeChart(tmp):
     tmp_value, tmp_timeline = [], []
     for i in tmp:
@@ -24,14 +24,24 @@ def makeChart(tmp):
     
     
 # Plot the charts
-plt.subplot(2, 2, 1)
 plt.plot(makeChart(eur_pln)[1], makeChart(eur_pln)[0], color='r', label='eur_pln')
-
-plt.subplot(2, 2, 2)
-plt.plot(makeChart(usd_pln)[1], makeChart(usd_pln)[0], color='g', label='usd_pln')
-
-plt.subplot(2, 2, 3)
-plt.plot(makeChart(eur_usd)[1], makeChart(eur_usd)[0], color='b', label='eur_usd')
-
 plt.legend()
+plt.title('EUR/PLN')
+plt.savefig('eur_pln.png')
 plt.show()
+
+plt.plot(makeChart(usd_pln)[1], makeChart(usd_pln)[0], color='g', label='usd_pln')
+plt.legend()
+plt.title('USD/PLN')
+plt.savefig('usd_pln.png')
+plt.show()
+
+plt.plot(makeChart(eur_usd)[1], makeChart(eur_usd)[0], color='b', label='eur_usd')
+plt.legend()
+plt.title('EUR/USD')
+plt.savefig('eur_usd.png')
+plt.show()
+
+
+
+

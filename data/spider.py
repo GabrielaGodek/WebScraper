@@ -10,6 +10,7 @@ class SpiderSpider(scrapy.Spider):
                   'https://notowania.pb.pl/instrument/PBWALUSD/dolar',
                   'https://notowania.pb.pl/instrument/PBWALEURUSD/eurusd']
 
+
     def parse(self, response):
         section = response.css('#pageMainContainer975')
         yield {
