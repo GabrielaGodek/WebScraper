@@ -64,6 +64,7 @@ body .statistic-page .row.charts .chart-wrapper {
 
 body .statistic-page .row.charts .chart-wrapper img {
   height: 100%;
+  width: 100%;
 }
 
 body .credits {
@@ -78,6 +79,29 @@ body .credits {
 }
 
 /* variables */
+@keyframes loaded {
+  0% {
+    width: 0%;
+    border-radius: 0 30px 30px 0;
+  }
+  25% {
+    width: 25%;
+    border-radius: 0 30px 30px 0;
+  }
+  50% {
+    width: 50%;
+    border-radius: 0 30px 30px 0;
+  }
+  75% {
+    width: 75%;
+    border-radius: 0 30px 30px 0;
+  }
+  100% {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 .chart-group {
   background-color: #F4F0F1;
   display: block;
@@ -94,54 +118,30 @@ body .credits {
   cursor: pointer;
   position: relative;
   z-index: 2;
-  transition: color 200ms ease-in;
   overflow: hidden;
 }
 
 .chart-group .title-label:before {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
   content: "";
-  background-color: #AC6276;
   position: absolute;
-  transform: translate(-50%, -50%) scale3d(1, 1, 1);
-  transition: all 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
   opacity: 0;
   z-index: -1;
 }
-
-.chart-group .title-label:after {
-  width: 32px;
-  height: 32px;
-  content: "";
-  border: 2px solid #F4F0F1;
-  background-color: #F4F0F1;
-  background-repeat: no-repeat;
-  background-position: 2px 3px;
-  border-radius: 50%;
-  z-index: 2;
-  position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  transition: all 200ms ease-in;
-}
-
 .chart-group input:checked ~ label {
   color: #F4F0F1;
 }
 
 .chart-group input:checked ~ label:before {
-  transform: translate(-100%, -100%) scale3d(206, 106, 1);
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #AC6276;
   opacity: 1;
-}
-
-.chart-group input:checked ~ label:after {
-  color: #F4F0F1;
-  background-color: #AC8682;
-  border-color: #AC8682;
+  animation: loaded .5s linear;
 }
 
 .chart-group input {
@@ -156,3 +156,14 @@ body .credits {
   cursor: pointer;
   visibility: hidden;
 }
+
+
+@media (max-width: 640px) {
+  .chart-group {
+    margin: 5px 0;
+  }
+  .chart-group .title-label {
+    padding: 6px 15px;
+  }
+}
+
