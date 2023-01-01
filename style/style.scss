@@ -1,3 +1,13 @@
 @import 'main-style';
 @import 'radio-animation';
 
+
+
+@media (max-width: 640px){
+    .chart-group {
+        margin: 5px 0;;
+        .title-label{
+            padding: 6px 15px;
+        }
+    }
+}

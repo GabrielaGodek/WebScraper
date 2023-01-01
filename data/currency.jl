@@ -60,3 +60,6 @@
 {"title": "EUR/PLN", "value": "4,6821 ", "data": "2022-12-31"}
 {"title": "USD/PLN", "value": "4,3767 ", "data": "2022-12-31"}
 {"title": "EUR/USD", "value": "1,0702 ", "data": "2022-12-31"}
+{"title": "EUR/USD", "value": "1,0702 ", "data": "2023-01-01"}
+{"title": "USD/PLN", "value": "4,3767 ", "data": "2023-01-01"}
+{"title": "EUR/PLN", "value": "4,6821 ", "data": "2023-01-01"}

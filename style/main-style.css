@@ -64,6 +64,7 @@ body .statistic-page .row.charts .chart-wrapper {
 
 body .statistic-page .row.charts .chart-wrapper img {
   height: 100%;
+  width: 100%;
 }
 
 body .credits {
