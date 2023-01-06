@@ -51,10 +51,6 @@ body .statistic-page .row.title-radio form {
   flex-direction: column;
 }
 
-body .statistic-page .row.charts {
-  height: 100%;
-}
-
 body .statistic-page .row.charts .chart-wrapper {
   max-height: 0;
   overflow: hidden;
@@ -69,6 +65,7 @@ body .statistic-page .row.charts .chart-wrapper img {
 
 body .credits {
   position: fixed;
+  z-index: 5;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -76,6 +73,11 @@ body .credits {
   text-align: right;
   color: #F4F0F1;
   background-color: #7B8485;
+}
+
+body div.credits-box {
+  position: relative;
+  margin-top: 60px;
 }
 
 /* variables */

@@ -3,7 +3,7 @@ const usd_pln = document.querySelector('.statistic-page .title-radio input#usd_p
 const eur_usd = document.querySelector('.statistic-page .title-radio input#eur_usd')
 
 
-document.querySelector('main').style.height = document.querySelector('.statistic-page .charts .eur_pln img').scrollHeight + 'px'
+// document.querySelector('main').style.height = document.querySelector('.statistic-page .charts .eur_pln img').scrollHeight + 'px'
 
 document.querySelectorAll('.statistic-page .title-radio input').forEach(radio => {
     radio.addEventListener('click', () => {

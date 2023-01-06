@@ -1,6 +1,8 @@
 import json_lines
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import numpy as np
+from datetime import datetime
 
 eur_pln, usd_pln, eur_usd  = [], [], []
 
@@ -19,12 +21,13 @@ def makeChart(tmp):
     for i in tmp:
         curr_value = float(i['value'].strip().replace(",", "."))
         tmp_value.append(curr_value)
-        tmp_timeline.append(i['data'])
+        tmp_timeline.append(datetime.strptime(i['data'], '%Y-%m-%d'))
+        
     return tmp_value, tmp_timeline
-    
     
 # Plot the charts
 plt.plot(makeChart(eur_pln)[1], makeChart(eur_pln)[0], color='r', label='eur_pln')
+plt.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%b'))
 plt.legend()
 plt.title('EUR/PLN')
 plt.savefig('eur_pln.png')
