@@ -133,7 +133,6 @@ body div.credits-box {
   opacity: 0;
   z-index: -1;
 }
-
 .chart-group input:checked ~ label {
   color: #F4F0F1;
 }
@@ -160,6 +159,7 @@ body div.credits-box {
   visibility: hidden;
 }
 
+
 @media (max-width: 640px) {
   .chart-group {
     margin: 5px 0;
@@ -168,3 +168,4 @@ body div.credits-box {
     padding: 6px 15px;
   }
 }
+
